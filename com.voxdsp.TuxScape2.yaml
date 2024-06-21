@@ -36,4 +36,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/mrbid/tuxscape2.git
-        commit: 4f86d7c6c9d75a3843aa5425733ab39d7248190b
+        commit: 0deb4eacbd703ea44af935c3b21e125dfbdd8d66
