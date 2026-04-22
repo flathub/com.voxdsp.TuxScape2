@@ -1,6 +1,6 @@
 app-id: com.voxdsp.TuxScape2
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: tuxscape2
 rename-icon: tuxscape2
@@ -11,6 +11,10 @@ finish-args:
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
 modules:
   - name: glfw
     buildsystem: cmake-ninja
@@ -32,7 +36,7 @@ modules:
       - install -Dm 0755 tuxscape2 -t ${FLATPAK_DEST}/bin
       - install -Dm 0644 flat/tuxscape2.desktop ${FLATPAK_DEST}/share/applications/tuxscape2.desktop
       - install -Dm 0644 flat/tuxscape2.appdata.xml ${FLATPAK_DEST}/share/metainfo/tuxscape2.appdata.xml
-      - install -Dm 0644 flat/tuxscape2.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/tuxscape2.png
+      - install -Dm 0644 flat/tuxscape2.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/tuxscape2.png
     sources:
       - type: git
         url: https://github.com/mrbid/tuxscape2.git
